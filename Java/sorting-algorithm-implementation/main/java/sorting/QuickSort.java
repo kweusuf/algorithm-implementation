@@ -19,7 +19,7 @@ import model.Heap;
 //5           i = i + 1
 //6           exchange A[i] with A[j]
 //7   exchange A[i + 1] with A[r]
-//8   retuirn i + 1
+//8   return i + 1
 
 public class QuickSort {
 	public static void quickSort(List<Integer> array, int p, int r) {
@@ -30,10 +30,10 @@ public class QuickSort {
 		}
 	}
 
-	private static int partition(List<Integer> array, int p, int r) {
+	public static int partition(List<Integer> array, int p, int r) {
 		int x = array.get(r);
 		int i = p - 1;
-		for(int j = p; j >= r - 1; j--) {
+		for(int j = p; j <= r - 1; j++) {
 			if(array.get(j) <= x) {
 				i++;
 				int temp = array.get(i);
@@ -57,7 +57,7 @@ public class QuickSort {
 		array.add(6);
 		array.add(7);
 
-		quickSort(array, 4, 6);
+		quickSort(array, 1, 6);
 		
 		System.out.println(array.toString());
 	}
